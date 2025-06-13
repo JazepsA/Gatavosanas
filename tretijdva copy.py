@@ -1,6 +1,6 @@
 class Skolotajs:
-   def __init__(self,uzvards,st_sk_ned):
-      self.ned= st_sk_ned
+   def __init__(self,uzvards):
+
       self.uzvards=uzvards
       self.tips=None
 
@@ -8,14 +8,15 @@ class Skolotajs:
       print(f"Skolotājs (tips={self.tips}) skolotājs {self.uzvards}")
    
 class SakumskolasSkolotajs(Skolotajs):
-   def __init__(self,uzvards,stundu_sk_ned,klase):
-      super().__init__(uzvards,stundu_sk_ned)
+   def __init__(self,uzvards,klase,st_sk_ned):
+      super().__init__(uzvards,)
       self.klase=klase
+      self.ned= st_sk_ned
       self.tips=1
 
    def info_a(self):
       value = super().info()
-      print("Sākumskolas")
+      print(f"Sākumskolas {value}")
       return value
       
 
@@ -47,7 +48,7 @@ a =SakumskolasSkolotajs(st_sk, uzvards_s, klase)
 a.info_a()
 
 b = Vidusskolasskolotajs(uzvards_v, p_pr, o_pr, p_pr_sk, o_pr_sk)
-b.stundu_skaits()
+b.stundu_sk()
 b.info() 
 
 
