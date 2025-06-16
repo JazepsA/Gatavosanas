@@ -9,7 +9,7 @@ class Skolotajs:
    
 class SakumskolasSkolotajs(Skolotajs):
    def __init__(self,uzvards,klase,st_sk_ned):
-      super().__init__(uzvards,)
+      super().__init__(uzvards)
       self.klase=klase
       self.ned= st_sk_ned
       self.tips=1
@@ -29,8 +29,11 @@ class Vidusskolasskolotajs(Skolotajs):
       self.pir_prieks_st=pirm_prieks_st
       self.otr_prieks_st=otr_prieks_st
 
-   def info(self):
-      print(f"Vidusskolas skolotājs (tips-{self.tips}) skolotājs {self.uzvards} māca šādus priekšmetus: {self.pir_prieks} un {self.otr_prieks} kopā {self.stundu_skaits} stundas  ")
+
+
+   def info_v(self):
+      a=super().info()
+      print(f"Vidusskolas {a} māca šādus priekšmetus: {self.pir_prieks} un {self.otr_prieks} kopā {self.stundu_skaits} stundas  ")
 
    def stundu_sk(self):
       self.stundu_skaits=int(self.pir_prieks_st) + int(self.otr_prieks_st)
